@@ -5,7 +5,7 @@ import { ChevronDown, Menu, X } from 'lucide-react'
 import { useState } from 'react'
 
 const serviceLinks = [
-  ['Web Development', '/services/web-development'],
+  ['Web Development & Maintenance', '/services/web-development'],
   ['SEO & Google Profile', '/services/seo-google-profile'],
   ['Digital Marketing', '/services/digital-marketing'],
   ['OTT Advertising', '/services/ott-advertising'],
