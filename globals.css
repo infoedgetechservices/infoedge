@@ -1,0 +1,49 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-muted-foreground: var(--muted-foreground);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+}
+
+:root {
+  --background: oklch(0.98 0.005 240);
+  --foreground: oklch(0.19 0.04 245);
+  --primary: oklch(0.61 0.22 245);
+  --primary-foreground: oklch(1 0 0);
+  --muted-foreground: oklch(0.5 0.04 245);
+  --border: oklch(0.91 0.025 240);
+  --input: oklch(0.91 0.025 240);
+  --ring: oklch(0.61 0.22 245);
+  --radius: 0.75rem;
+}
+
+@layer base {
+  * { @apply border-border outline-ring/50; }
+  html { scroll-behavior: smooth; }
+  body { @apply bg-background text-foreground; }
+  button, a, select { -webkit-tap-highlight-color: transparent; }
+}
+
+::selection { background: #b9ddff; color: #102238; }
+
+.field { margin-top: 0.5rem; width: 100%; border-radius: 0.75rem; border: 1px solid #dce5ef; background: #fbfcfe; padding: 0.875rem 1rem; font-weight: 400; outline: none; transition: border-color 150ms, box-shadow 150ms; }
+.field:focus { border-color: #087ff5; box-shadow: 0 0 0 4px #dbeafe; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+}
